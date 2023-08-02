@@ -1,0 +1,28 @@
+# .gitignore
+
+# Ignore the environment file
+.env
+
+# Ignore the Python cache files
+__pycache__/
+
+# Ignore the flask session files
+flask_session/
+
+# Ignore the log files
+*.log
+
+# Ignore any .pyc files
+*.pyc
+
+# Ignore any .pyo files
+*.pyo
+
+# Ignore any .pyd files
+*.pyd
+
+# Ignore SQLite database files
+*.sqlite
+
+# Ignore any .so files
+*.so

@@ -1,0 +1,16 @@
+# requirements.txt
+
+# Web framework
+flask
+
+# Used to load environment variables
+python-dotenv
+
+# Python client for the OpenAI API
+openai
+
+# Templating language for Python
+Jinja2
+
+# Python's built-in WSGI application server
+werkzeug

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat to Nmap Command</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <h1>Chat to Nmap Command</h1>
+    
+    <div>
+        <label for="message">Your message:</label>
+        <textarea id="message" rows="4" cols="50"></textarea>
+
+    </div>
+
+    <button id="submit">Submit</button>
+
+    <div>
+        <label for="nmap_command">Nmap Command:</label>
+        <textarea id="nmap_command" readonly></textarea>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#submit').click(function() {
+                var user_message = $('#message').val();
+
+                $.ajax({
+                    url: '/api/chat',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        'message': user_message
+                    }),
+                    success: function(data) {
+                        if (data.error) {
+                            alert(data.error);
+                        } else {
+                            $('#nmap_command').val(data.nmap_command);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
